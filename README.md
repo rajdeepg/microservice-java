@@ -10,9 +10,9 @@ Separation of Concerns
 
 ## We want to follow a design pattern where we have 3 layers of responsibilities.
 
-Controllers - This provides the REST API Implementation.  Its primary purpose to generate the REST API, validate the incoming input, call the appropriate provider classes to perform the operation, and format the output response.
-Providers - This is where all the Business logic of the system will reside.  It should use the appropriate services when performing an operation.  Its main purpose is to orchestrate the different services to perform the given operation.
-Services - This is where a specific component exposes its APIs.
+* **Controllers** - This provides the REST API Implementation.  Its primary purpose to generate the REST API, validate the incoming input, call the appropriate provider classes to perform the operation, and format the output response.
+* **Providers** - This is where all the Business logic of the system will reside.  It should use the appropriate services when performing an operation.  Its main purpose is to orchestrate the different services to perform the given operation.
+* **Services** - This is where a specific component exposes its APIs.
 
 ## Singleton Architecture
 We have decided to use a Singleton architecture for all business objects.  By doing this, when requests come to the service, it will not require these complex business objects to be created since they would have already been created resulting in better performance and reduction in garbage collection cycles.  Spring by default creates all beans as Singleton unless explicitly specified otherwise.  All business classes should be registered with Spring.
@@ -48,7 +48,6 @@ CompletableFuture is used for asynchronous programming in Java. Asynchronous pro
 
 ## Aspect-Oriented Programming
 We should use AOP (Aspect Oriented Programming) when it makes sense.  A good example of when to use AOP is for logging.  We do not have to write log statements for all our methods and will be automatically taken care of if we create a Logging AOP class.  This class can handle all uncaught exception, log arguments for methods (excluding PII info), and will keep logging very consistent.  The rest of the code does not have to be sprinkled with logging statements.
-
 
 ## Exception/Error Handling
 We need a generic way to handle exceptions and error handling.  We can create a generic Exception handler class that maps all unhandled exceptions to user facing HTTP Status codes.  If the Exception Handler gets an unhandled exception it returns (418 - I am a Teapot) to signify that we have not mapped this exception to a user facing HTTP Status code.  The default response code should be 418, so we can track all that pass through, and assign them the correct response code. 418's indicate a condition we have not expected.  The JSON response also includes a tracking id so we can use that to check Splunk for more detailed information regarding the error.  All Splunk logs will include this tracking id.
