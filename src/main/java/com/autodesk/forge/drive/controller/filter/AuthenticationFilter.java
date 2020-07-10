@@ -1,12 +1,3 @@
-/*
- * Copyright 2019 Autodesk, Inc. All Rights Reserved.
- *
- * This computer source code and related instructions and comments are the unpublished confidential
- * and proprietary information of Autodesk, Inc. and are protected under applicable copyright and
- * trade secret law. They may not be disclosed to, copied or used by any third party without the
- * prior written consent of Autodesk, Inc.
- */
-
 package com.autodesk.forge.drive.controller.filter;
 
 import com.autodesk.forge.drive.model.RequestData;
@@ -70,24 +61,6 @@ import java.util.regex.Pattern;
 
     if (whitelistApiPathRegEx.matcher(requestURI).lookingAt()) {
       return HttpStatus.OK;
-    }
-
-    RequestData authenticationRequestData = applicationContext.getBean(RequestData.class);
-
-    // We *always* expect x-ads-token-data
-    String xAdsTokenData = request.getHeader("x-ads-token-data");
-    if (StringUtils.isEmpty(xAdsTokenData)) {
-      logger.error("Missing xAdsTokenData");
-      return HttpStatus.UNAUTHORIZED;
-    } else {
-      try {
-        // Attempt to convert to JSON
-        TokenData tokenData = objectMapper.readValue(xAdsTokenData, TokenData.class);
-        authenticationRequestData.setTokenData(tokenData);
-      } catch (java.io.IOException e) {
-        logger.error("Invalid xAdsTokenData [{}]", e);
-        return HttpStatus.BAD_REQUEST;
-      }
     }
 
     return HttpStatus.OK;
