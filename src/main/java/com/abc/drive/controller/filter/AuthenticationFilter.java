@@ -1,7 +1,5 @@
-package com.autodesk.forge.drive.controller.filter;
+package com.abc.drive.controller.filter;
 
-import com.autodesk.forge.drive.model.RequestData;
-import com.autodesk.forge.drive.model.TokenData;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -11,7 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;

@@ -1,6 +1,6 @@
-package com.autodesk.forge.drive.service;
+package com.abc.drive.service;
 
-import com.autodesk.forge.drive.model.response.DriveInfo;
+import com.abc.drive.model.response.DriveInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

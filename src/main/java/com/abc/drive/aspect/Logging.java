@@ -1,7 +1,7 @@
-package com.autodesk.forge.drive.aspect;
+package com.abc.drive.aspect;
 
-import com.autodesk.forge.drive.controller.filter.AuthenticationFilter;
-import com.autodesk.forge.drive.model.RequestData;
+import com.abc.drive.controller.filter.AuthenticationFilter;
+import com.abc.drive.model.RequestData;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;

@@ -7,10 +7,10 @@
  * prior written consent of Autodesk, Inc.
  */
 
-package com.autodesk.forge.drive.controller.handler;
+package com.abc.drive.controller.handler;
 
-import com.autodesk.forge.drive.model.ErrorData;
-import com.autodesk.forge.drive.model.RequestData;
+import com.abc.drive.model.ErrorData;
+import com.abc.drive.model.RequestData;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

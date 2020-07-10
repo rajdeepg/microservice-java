@@ -1,4 +1,4 @@
-package com.autodesk.forge.drive.config;
+package com.abc.drive.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

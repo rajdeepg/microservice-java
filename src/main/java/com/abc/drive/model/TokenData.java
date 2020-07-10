@@ -1,4 +1,4 @@
-package com.autodesk.forge.drive.model;
+package com.abc.drive.model;
 
 import lombok.Getter;
 import lombok.Setter;

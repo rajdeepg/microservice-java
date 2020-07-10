@@ -1,4 +1,4 @@
-package com.autodesk.forge.drive.model.response;
+package com.abc.drive.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
